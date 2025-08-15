@@ -1,7 +1,7 @@
 **Personalized AI Finance Advisor**
 A web-based financial advisor that leverages machine learning and generative AI to provide users with deep insights into their financial health, including predictive forecasts, risk analysis, and interactive "what-if" scenario planning.
 
-**Video Demonstration & Live Application**
+**Live Application**
 Live Demo URL: https://personal-finance-advisor-ai.streamlit.app/
 
 **Core Features**

@@ -130,7 +130,7 @@ def get_risk_flags(df: pd.DataFrame) -> dict:
     logger.info(f"Found {len(risk_flags)} most significant risk flags.")
     return risk_flags
 
-# --- RE-ARCHITECTED Gemini Function with Fix ---
+# --- Gemini Function ---
 def get_gemini_advice(forecast_data: list, risks_data: list, metrics: dict) -> str:
     """
     Generates a detailed, multi-part financial report by chaining multiple calls to the Gemini API.
@@ -161,7 +161,6 @@ def get_gemini_advice(forecast_data: list, risks_data: list, metrics: dict) -> s
     try:
         model = genai.GenerativeModel("gemini-1.5-pro-latest")
         
-        # --- THIS IS THE FIX ---
         # Increase the maximum output tokens to allow for a longer response
         generation_config = genai.types.GenerationConfig(max_output_tokens=8192)
 

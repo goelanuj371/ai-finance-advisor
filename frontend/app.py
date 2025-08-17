@@ -42,7 +42,7 @@ def create_forecast_chart(original_forecast, simulated_forecast=None):
         line=dict(color='#6a1b9a', width=3, dash='dash'), name='Original Forecast'
     ))
 
-    # Simulated Forecast Line (if available)
+    # Simulated Forecast Line 
     if simulated_forecast:
         df_sim = pd.DataFrame(simulated_forecast)
         df_sim['ds'] = pd.to_datetime(df_sim['ds'])
@@ -160,8 +160,6 @@ if st.session_state.results:
         future_dates = pd.to_datetime(simulated_forecast['ds'])
         start_date = future_dates.min()
         
-        # --- THIS IS THE FIX ---
-        # Use .dt.days to correctly calculate the number of days for each row
         cumulative_change = (future_dates - start_date).dt.days * total_daily_reduction
         
         simulated_forecast['yhat'] += cumulative_change
